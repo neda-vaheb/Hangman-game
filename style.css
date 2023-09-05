@@ -16,5 +16,45 @@ h1{
     text-align: center;
     margin: 40px auto;
     font-size : 2rem;
-    color: green;
+    color: darkgreen;
+}
+#letters{
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+#letters div{
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid gray;
+    color: darkgreen;
+    cursor: pointer;
+}
+#letters div:hover {
+    background-color: rgb(153, 226, 153);
+}
+#letters div.used{
+    background-color: rgb(198, 199, 199);
+    opacity: 0.5;
+}
+#image{
+    margin: 30px auto;
+    text-align: center;
+}
+#clue p{
+    text-align: center;
+    letter-spacing: 0.5rem;
+    margin:30px auto ;
+    font-size: 3rem;
+}
+.used{
+    background-color: rgb(176, 247, 143);
+    opacity: 0.5;
+
+}
+#gameover p{
+    text-align: center;
+    font-size: 1rem;
+    display: none;
 }
