@@ -6,7 +6,7 @@
 }
 body{
     display: grid;
-    grid-template-rows: 6rem auto 200px 2rem 6rem;
+    grid-template-rows: 7rem auto 270px 6rem 6rem;
     text-align: center;
     align-content: flex-start;
     height: 100%;
@@ -14,7 +14,7 @@ body{
 }
 h1{
     text-align: center;
-    margin: 40px auto;
+ margin-top: 30px;
     font-size : 2rem;
     color: darkgreen;
 }
@@ -38,7 +38,7 @@ flex-wrap: wrap;
     background-color: rgb(198, 199, 199);
     opacity: 0.5;
 }
-#image{
+#image img{
     margin: 30px auto;
     text-align: center;
 }
@@ -56,5 +56,5 @@ flex-wrap: wrap;
 #gameover p{
     text-align: center;
     font-size: 1rem;
-    display: none;
+    
 }
