@@ -6,7 +6,7 @@ let result = "";
 let mistakes = 0;
 
 function selectRandomItem(){
-    randomItem = secretPhrases[Math.floor(Math.random()*secretPhrases.lenght)];
+    randomItem = secretPhrases[Math.floor(Math.random() * secretPhrases.length)];
     document.getElementById("letters").addEventListener("click",buttonHandler);
     window.addEventListener("keydown",keyHandler);
     console.log(randomItem);
@@ -20,8 +20,10 @@ function setUnderScores(){
 }
 function checkIfWon(){
     if(randomItem === result){
-        document.getElementById("gameover").innerHTML = `<p>you won</p>`;
-        document.getElementById("image").querySelector("img").src="assets/winner.png";
+       let gameover = document.getElementById("gameover").querySelector("p");
+       gameover.style.display="block";
+       gameover.innerText="You Won";
+       document.getElementById("image").querySelector("img").src="assets/winner.png";
     }
 }
 
@@ -58,3 +60,6 @@ function buttonHandler(event){
 function keyHandler(event){
     letterHandler(event.key);
 }
+
+selectRandomItem();
+setUnderScores();

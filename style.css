@@ -56,5 +56,6 @@ flex-wrap: wrap;
 #gameover p{
     text-align: center;
     font-size: 1rem;
+    display: none;
     
 }
