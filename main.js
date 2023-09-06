@@ -11,3 +11,10 @@ function selectRandomItem(){
 
     console.log(randomItem);
 }
+
+function setUnderScores(){
+    let splitedWord = randomItem.split("");
+    let mappedWord = splitedWord.map(letter => clicked.indexOf(letter) >=0 ? letter : "-")
+    result = mappedWord.join("");
+    document.getElementById("clue").innerHTML = `<p>${result}</p>`;
+}
