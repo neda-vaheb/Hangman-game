@@ -18,3 +18,17 @@ function setUnderScores(){
     result = mappedWord.join("");
     document.getElementById("clue").innerHTML = `<p>${result}</p>`;
 }
+
+function letterHandler(letter){
+    letter = letter.toLowerCase();
+    clicked.indexOf(letter) === -1 ? clicked.push(letter) : null;
+    document.getElementById(letter.toUpperCase()).className = "used";
+    if(randomItem.indexOf(letter) >= 0){
+        setUnderScores();
+
+    }else if(randomItem.indexOf(letter) === -1){
+        mistakes++;
+    }
+
+   
+}
