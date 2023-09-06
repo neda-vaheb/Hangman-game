@@ -20,8 +20,15 @@ function setUnderScores(){
 }
 function checkIfWon(){
     if(randomItem === result){
-        document.getElementById("gameover").innerHTML = `<p>you won<p>`;
+        document.getElementById("gameover").innerHTML = `<p>you won</p>`;
         document.getElementById("image").querySelector("img").src="assets/winner.png";
+    }
+}
+
+function checkIflost(){
+    if(mistakes === 6){
+        document.getElementById("gameover").querySelector("p").style.display = "block";
+        document.getElementById("clue").innerHTML = `<p>The Random word is  : ${randomItem}</p>`
     }
 }
 
