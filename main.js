@@ -8,7 +8,7 @@ let mistakes = 0;
 function selectRandomItem(){
     randomItem = secretPhrases[Math.floor(Math.random()*secretPhrases.lenght)];
     document.getElementById("letters").addEventListener("click",buttonHandler);
-
+    window.addEventListener("keydown",keyHandler);
     console.log(randomItem);
 }
 
@@ -31,6 +31,10 @@ function checkIflost(){
         document.getElementById("clue").innerHTML = `<p>The Random word is  : ${randomItem}</p>`
     }
 }
+function updateHangmanPicture(){
+    const image = document.getElementById("image").querySelector("img");
+    image.src = `assets/hangman${mistakes}.png`
+}
 
 function letterHandler(letter){
     letter = letter.toLowerCase();
@@ -42,6 +46,15 @@ function letterHandler(letter){
 
     }else if(randomItem.indexOf(letter) === -1){
         mistakes++;
+        checkIflost();
+        updateHangmanPicture();
     }
  
+}
+function buttonHandler(event){
+    letterHandler(event.target.id);
+
+}
+function keyHandler(event){
+    letterHandler(event.key);
 }
