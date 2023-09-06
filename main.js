@@ -18,6 +18,12 @@ function setUnderScores(){
     result = mappedWord.join("");
     document.getElementById("clue").innerHTML = `<p>${result}</p>`;
 }
+function checkIfWon(){
+    if(randomItem === result){
+        document.getElementById("gameover").innerHTML = `<p>you won<p>`;
+        document.getElementById("image").querySelector("img").src="assets/winner.png";
+    }
+}
 
 function letterHandler(letter){
     letter = letter.toLowerCase();
@@ -25,10 +31,10 @@ function letterHandler(letter){
     document.getElementById(letter.toUpperCase()).className = "used";
     if(randomItem.indexOf(letter) >= 0){
         setUnderScores();
+        checkIfWon();
 
     }else if(randomItem.indexOf(letter) === -1){
         mistakes++;
     }
-
-   
+ 
 }
